@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BBC-News</title>
+	<link rel="stylesheet" type="text/css" href="bbcn.css">
+</head>
+<body>
+	
+		<div> 
+			<img src="BBC LOGO.jpg">
+			<ul id="link1">
+				<li class="link1"><a href="">News</a></li>
+				<li class="link1"><a href="">Sports</a></li>
+				<li class="link1"><a href="">Weather</a></li>
+				<li class="link1"><a href="">iPlayer</a></li>
+				<li class="link1"><a href="">TV</a></li>
+				<li class="link1"><a href="">Radio</a></li>
+				<li class="link1"><a href="">More</a></li>
+
+			</ul>
+		</div>
+		
+
+		<div id="v">
+			<div id="title">NEWS</div>
+			
+				
+				<ul id="link2">
+					<li class="link2"><a href="#Home" class="a2">Home</a></li>
+					<li class="link2"><a href="#india" class="a2">INDIA</a></li>
+					<li class="link2"><a href="#World" class="a2">World</a></li>
+					<li class="link2"><a href="#Business" class="a2">Business</a></li>
+					<li class="link2"><a href="#Politics" class="a2">Politics</a></li>
+					<li class="link2"><a href="#Tech" class="a2">Tech</a></li>
+					<li class="link2"><a href="#Science" class="a2">Science</a></li>
+					<li class="link2"><a href="#Health" class="a2">Health</a></li>
+					<li class="link2"><a href="#Education" class="a2">Education</a></li>
+					<li class="link2"><a href="#Video" class="a2">Video & Audio</a></li>
+					<li class="link2"><a href="#More" class="a2">More</a></li>
+				</ul>
+		
+		</div>
+
+		<div id="mainText">
+			<span id="Home" >
+				this is the BBC website
+			</span>
+			<span id="india"> this is india section</span>
+			<span id="World"> this is world section</span>
+			<span id="Business"> this is business section</span>
+			<span id="Politics"> this is politics section</span>
+			<span id="Tech"> this is tech section</span>
+			<span id="Science">this is science section</span>
+			<span id="Health"> this is health section</span>
+			<span id="Education">this is education section</span>
+			<span id="Video"> this is audio section</span>
+			<span id="More">this is more section</span>
+		</div>
+
+		<div id="alwaysVisible">
+			gbubkiubkbbkibnik
+			<video src=" " height="100px" width="150px">bgkjubhkj</video>
+			<video src=" " height="100px" width="150px">bkmjbkjbk</video>
+			<video src=" " height="100px" width="150px">jkbkjb</video>			
+		</div>
+		
+
+
+<script src="jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.link2:first').addClass('active');
+		var $div=$('div');
+		$div.addClass('hidden');
+		$('div:first').addClass('visible');
+		$('#v').addClass('visible');
+		$('#title').addClass('visible');
+		$('#mainText').addClass('visible');
+		$('span:first').addClass('visible');
+		
+	});
+	$('a').on('click',function(e){
+		e.preventDefault();
+		$('.link2').removeClass('active');
+		var $this=$(this);
+		$this.parent().addClass('active');
+		var link=$(this).attr('href');
+		$('span').removeClass('visible');
+		$(link).addClass('visible');
+	})
+
+
+</script>
+</body>
+</html>
