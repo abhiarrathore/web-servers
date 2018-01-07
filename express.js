@@ -9,6 +9,17 @@ var app=express();
 hbs.registerPartials(__dirname+'/views/partials');
 app.set('view engine','hbs');
 
+app.use((req,res,next)=>{
+	var now=new Date().toString();
+	var log='${now}: ${req.method} ${req.url}';
+
+	console.log(log);
+	fs.appendFile('server.log',log,(error)=>{
+		console.log('error occurred');
+	});
+	next();
+})
+
 app.use(express.static(__dirname+'/public'));
 
 app.get('/',function(req,res) {
@@ -32,6 +43,8 @@ app.get('/about',(req,res)=>{
 		date:new Date().getFullYear()
 	});
 });
+
+
 
 app.get('/bad',(req,res)=>{
 	res.send({
